@@ -14,9 +14,9 @@ def number_len_checker(number_str):
 
 def calculate_result(number1, operator, number2):
     if operator == '+':
-        return int(number1) + int(number2)
+        return str(int(number1) + int(number2))
     elif operator == '-':
-        return int(number1) - int(number2)
+        return str(int(number1) - int(number2))
     else:
         raise
 
@@ -49,7 +49,7 @@ def arithmetic_arranger(problems, show_answers=False):
         first_row += numbers1[i].rjust(problem_width) + separator
         second_row += operators[i] + ' ' + numbers2[i].rjust(problem_width - 2) + separator
         line_row += LINE_CHAR * problem_width + separator
-        result_row += str(calculate_result(numbers1[i], operators[i], numbers2[i])).rjust(problem_width) + separator
+        result_row += calculate_result(numbers1[i], operators[i], numbers2[i]).rjust(problem_width) + separator
 
     if show_answers:
         return '\n'.join((first_row[:-SPACE_BETWEEN_PROBLEMS],
