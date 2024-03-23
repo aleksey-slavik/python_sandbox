@@ -48,6 +48,9 @@ def move(n, source, auxiliary, target):
             make_allowed_move(auxiliary, target)
 
 
+move(NUMBER_OF_DISKS, 'A', 'B', 'C')
+
+
 A = list(range(NUMBER_OF_DISKS, 0, -1))
 B = []
 C = []
@@ -68,7 +71,5 @@ def move_recursive(n, source, auxiliary, target):
     # move the n - 1 disks that we left on auxiliary onto target
     move_recursive(n - 1, auxiliary, source, target)
 
-
-move(NUMBER_OF_DISKS, 'A', 'B', 'C')
 
 move_recursive(NUMBER_OF_DISKS, A, B, C)
