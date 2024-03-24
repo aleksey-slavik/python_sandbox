@@ -13,11 +13,11 @@ def calculate_time_minutes(time, period=None):
 
     if period is not None:
         if period == BEFORE_MIDDAY_PERIOD:
-            if time_hours == 12:
+            if time_hours == HALF_DAY_HOURS:
                 time_hours = 0
         else:
-            if time_hours != 12:
-                time_hours += 12
+            if time_hours != HALF_DAY_HOURS:
+                time_hours += HALF_DAY_HOURS
 
     time_minutes += time_hours * HOUR_MINUTES
     return time_minutes
@@ -54,4 +54,4 @@ def add_time(start, duration, start_day=None):
     return new_time
 
 
-print(add_time('11:30 AM', '2:32', 'Monday'))
+print(add_time('11:30 AM', '202:32', 'Monday'))
